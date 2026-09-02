@@ -2,6 +2,19 @@
 
 ---
 
+## [2026-09-02 14:32 IST] - PR #1 Merge Conflict Resolution ("Mic Fix")
+
+### Objective
+Resolved a broken build (`Unterminated JSX contents` in `App.jsx`) and structural issues resulting from the recent "Mic Fix" pull request merge.
+
+---
+
+### Changes & Fixes
+- **Merge Conflict Resolution (`App.jsx`)**: The "Mic Fix" PR mistakenly re-introduced the archaic 3-pane unified layout into `App.jsx`, colliding destructively with our newer Role-Based Routes implementation (triggering a JSX termination crash). Re-instated the clean `Routes` wrapper block.
+- **Voice Overlay Migration (`FarmerDashboard.jsx`)**: Extensively analyzed the PR's true intent which was to introduce actual Web Speech API support in `VoiceOverlay.jsx`. Relocated the new `VoiceOverlay` mounting cleanly into `FarmerDashboard.jsx`, injecting the required `isVoiceOpen` state, ensuring that the farmer's microphone functionality is globally accessible without disrupting RBAC structures.
+
+---
+
 ## [2026-09-01 14:49 IST] - Supabase IPv4 Connection Pooling Configuration
 
 ### Objective
