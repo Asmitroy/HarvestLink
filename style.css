@@ -500,6 +500,7 @@ svg { display: block; flex-shrink: 0; }
   font-weight: 600;
   color: var(--text-900);
   outline: none;
+  appearance: none;
   -webkit-appearance: none;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
@@ -1200,6 +1201,7 @@ svg { display: block; flex-shrink: 0; }
   color: var(--green-primary);
   text-align: center;
   outline: none;
+  appearance: none;
   -webkit-appearance: none;
 }
 .price-big-input::-webkit-inner-spin-button, .price-big-input::-webkit-outer-spin-button { -webkit-appearance: none; }
