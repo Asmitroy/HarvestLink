@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -k -n \"API,VITE\" -c \"cyan,green\" \"node server/index.js\" \"vite\"",
+    "dev": "vite",
     "dev:server": "node server/index.js",
     "dev:full": "concurrently -k -n \"API,VITE\" -c \"cyan,green\" \"node server/index.js\" \"vite\"",
     "db:seed": "node server/db/seed.js",
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
-
     "concurrently": "^9.1.2",
     "cors": "^2.8.5",
     "dotenv": "^17.4.2",

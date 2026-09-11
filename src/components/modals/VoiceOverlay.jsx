@@ -2,11 +2,11 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 
 // ── Crop keyword map (English + Hindi + Marathi common words) ──────────────
 const CROP_KEYWORDS = {
-  tomato:  ['tomato', 'tamatar', 'tamater', 'tomatoes'],
-  onion:   ['onion', 'pyaz', 'pyaaz', 'kanda', 'onions'],
-  potato:  ['potato', 'aloo', 'alu', 'batata', 'potatoes'],
-  wheat:   ['wheat', 'gehu', 'gehun', 'gahu'],
-  chilli:  ['chilli', 'chili', 'mirchi', 'mirch', 'chillies'],
+  tomato: ['tomato', 'tamatar', 'tamater', 'tomatoes'],
+  onion: ['onion', 'pyaz', 'pyaaz', 'kanda', 'onions'],
+  potato: ['potato', 'aloo', 'alu', 'batata', 'potatoes'],
+  wheat: ['wheat', 'gehu', 'gehun', 'gahu'],
+  chilli: ['chilli', 'chili', 'mirchi', 'mirch', 'chillies'],
   brinjal: ['brinjal', 'baingan', 'baigan', 'eggplant', 'brinjals'],
 };
 
@@ -34,14 +34,14 @@ function parseTranscript(text) {
 }
 
 export default function VoiceOverlay({ onClose, onRecognized }) {
-  const recognitionRef    = useRef(null);
+  const recognitionRef = useRef(null);
   const finalTranscriptRef = useRef('');
-  const isUnmountedRef    = useRef(false);
+  const isUnmountedRef = useRef(false);
 
   const [transcript, setTranscript] = useState('');
-  const [status,     setStatus]     = useState('starting'); // starting | listening | error
-  const [errorMsg,   setErrorMsg]   = useState('');
-  const [parsed,     setParsed]     = useState(null);
+  const [status, setStatus] = useState('starting'); // starting | listening | error
+  const [errorMsg, setErrorMsg] = useState('');
+  const [parsed, setParsed] = useState(null);
 
   // ── Stop and close ──────────────────────────────────────────────────────
   const stopAndClose = useCallback(() => {
@@ -68,9 +68,9 @@ export default function VoiceOverlay({ onClose, onRecognized }) {
 
     const rec = new SR();
     recognitionRef.current = rec;
-    rec.lang            = 'en-IN';   // Indian English – also picks up Hindi/Marathi words
-    rec.continuous      = true;      // keep going until we stop it explicitly
-    rec.interimResults  = true;      // show partial results live
+    rec.lang = 'en-IN';   // Indian English – also picks up Hindi/Marathi words
+    rec.continuous = true;      // keep going until we stop it explicitly
+    rec.interimResults = true;      // show partial results live
     rec.maxAlternatives = 1;
 
     rec.onstart = () => {
@@ -80,7 +80,7 @@ export default function VoiceOverlay({ onClose, onRecognized }) {
     rec.onresult = (event) => {
       if (isUnmountedRef.current) return;
       let interimText = '';
-      let finalText   = finalTranscriptRef.current;
+      let finalText = finalTranscriptRef.current;
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
         const segment = event.results[i][0].transcript;
@@ -102,9 +102,9 @@ export default function VoiceOverlay({ onClose, onRecognized }) {
       if (event.error === 'no-speech' || event.error === 'aborted') return;
       setStatus('error');
       const msgs = {
-        'not-allowed':         'Microphone permission denied. Click the lock icon in the address bar and allow mic access.',
-        'audio-capture':       'No microphone found. Please connect a microphone and try again.',
-        'network':             'Network error during speech recognition. Check your internet connection.',
+        'not-allowed': 'Microphone permission denied. Click the lock icon in the address bar and allow mic access.',
+        'audio-capture': 'No microphone found. Please connect a microphone and try again.',
+        'network': 'Network error during speech recognition. Check your internet connection.',
         'service-not-allowed': 'Speech service blocked. Please try Chrome or Edge.',
       };
       setErrorMsg(msgs[event.error] || `Speech error: ${event.error}`);
@@ -132,7 +132,7 @@ export default function VoiceOverlay({ onClose, onRecognized }) {
 
   // ── Derived labels ──────────────────────────────────────────────────────
   const cropLabel = parsed?.crop ? `🌿 ${parsed.crop.charAt(0).toUpperCase() + parsed.crop.slice(1)}` : null;
-  const qtyLabel  = parsed?.qty  ? `⚖️ ${parsed.qty} kg` : null;
+  const qtyLabel = parsed?.qty ? `⚖️ ${parsed.qty} kg` : null;
 
   return (
     <div
@@ -162,20 +162,20 @@ export default function VoiceOverlay({ onClose, onRecognized }) {
           <div
             className="relative z-10 w-16 h-16 rounded-full border-2 flex items-center justify-center backdrop-blur-sm"
             style={{
-              background:  status === 'error' ? 'rgba(239,68,68,0.25)' : 'rgba(255,255,255,0.15)',
-              borderColor: status === 'error' ? 'rgba(239,68,68,0.6)'  : 'rgba(255,255,255,0.3)',
+              background: status === 'error' ? 'rgba(239,68,68,0.25)' : 'rgba(255,255,255,0.15)',
+              borderColor: status === 'error' ? 'rgba(239,68,68,0.6)' : 'rgba(255,255,255,0.3)',
             }}
           >
             {status === 'error' ? (
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
-                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
               <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                <line x1="12" y1="19" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="8"  y1="23" x2="16" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
+                <line x1="12" y1="19" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                <line x1="8" y1="23" x2="16" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round" />
               </svg>
             )}
           </div>
@@ -185,7 +185,7 @@ export default function VoiceOverlay({ onClose, onRecognized }) {
         <h3 className="text-[1.4rem] font-extrabold leading-tight">
           {status === 'starting' && 'Starting mic…'}
           {status === 'listening' && 'Listening…'}
-          {status === 'error'    && 'Mic Error'}
+          {status === 'error' && 'Mic Error'}
         </h3>
 
         {/* ── Error ── */}

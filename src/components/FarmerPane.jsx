@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useAppContext, calculateRecommendedPrice } from '../context/AppContext';
+import VoiceOverlay from './modals/VoiceOverlay';
 
 const CROPS = [
   { value: 'tomato',  label: '🍅 Tomato',  name: 'Tomato'  },
@@ -19,6 +20,7 @@ export default function FarmerPane({ voiceCrop, voiceQty, clearVoice, onVoice, o
   const [isListing,   setListing]     = useState(false);
   const [flashInput,  setFlashInput]  = useState(false);
   const [isRecording, setIsRecording] = useState(false);
+  const [voiceOpen,   setVoiceOpen]   = useState(false);
   const [priceFlash,  setPriceFlash]  = useState(false);
 
   // ── Dynamic Pricing Engine Calculation ──
@@ -60,17 +62,16 @@ export default function FarmerPane({ voiceCrop, voiceQty, clearVoice, onVoice, o
 
   // ── Optimized: Stable Handlers ──
   const handleVoiceClick = useCallback(() => {
-    if (isRecording) return;
-    setIsRecording(true);
-    addToast('🎙️ Speech Recognition active. Speak your produce details…', 'info');
+    setVoiceOpen(true);
+  }, []);
 
-    setTimeout(() => {
-      setIsRecording(false);
-      setCrop('tomato');
-      setQty('100');
-      addToast('🎯 Voice AI: Parsed "100kg Tomato" & calculated recommended price!', 'success');
-    }, 3000);
-  }, [isRecording, addToast]);
+  const handleVoiceRecognized = useCallback((crop, qty) => {
+    setVoiceOpen(false);
+    setIsRecording(false);
+    if (crop) setCrop(crop);
+    if (qty)  setQty(String(qty));
+    addToast(`🎙️ Voice: "${qty ? qty + 'kg ' : ''}${crop ? crop.charAt(0).toUpperCase() + crop.slice(1) : ''}" — fields filled!`, 'success');
+  }, [addToast]);
 
   const handleList = useCallback(async () => {
     const qtyNum = parseFloat(qty);
@@ -296,6 +297,12 @@ export default function FarmerPane({ voiceCrop, voiceQty, clearVoice, onVoice, o
           </div>
         ))}
       </div>
+      {voiceOpen && (
+        <VoiceOverlay
+          onClose={() => { setVoiceOpen(false); setIsRecording(false); }}
+          onRecognized={handleVoiceRecognized}
+        />
+      )}
 
     </div>
   );
