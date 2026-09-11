@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k -n \"API,VITE\" -c \"cyan,green\" \"node server/index.js\" \"vite\"",
     "dev:server": "node server/index.js",
     "dev:full": "concurrently -k -n \"API,VITE\" -c \"cyan,green\" \"node server/index.js\" \"vite\"",
     "db:seed": "node server/db/seed.js",
