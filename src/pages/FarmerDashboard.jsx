@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DashboardShell from '../components/DashboardShell';
 import FarmerPane from '../components/FarmerPane';
 import VoiceOverlay from '../components/modals/VoiceOverlay';
+import AIChatbot from '../components/AIChatbot';
 
 export default function FarmerDashboard() {
   const [voiceCrop, setVoiceCrop] = useState(null);
@@ -9,25 +10,30 @@ export default function FarmerDashboard() {
   const [isVoiceOpen, setVoiceOpen] = useState(false);
 
   return (
-    <DashboardShell>
-      <FarmerPane
-        voiceCrop={voiceCrop}
-        voiceQty={voiceQty}
-        clearVoice={() => { setVoiceCrop(null); setVoiceQty(null); }}
-        onVoice={() => setVoiceOpen(true)}
-        onEdit={() => {}}
-      />
-      
-      {isVoiceOpen && (
-        <VoiceOverlay
-          onClose={() => setVoiceOpen(false)}
-          onRecognized={(c, q) => {
-            setVoiceCrop(c);
-            setVoiceQty(q);
-            setVoiceOpen(false);
-          }}
+    <>
+      <DashboardShell>
+        <FarmerPane
+          voiceCrop={voiceCrop}
+          voiceQty={voiceQty}
+          clearVoice={() => { setVoiceCrop(null); setVoiceQty(null); }}
+          onVoice={() => setVoiceOpen(true)}
+          onEdit={() => {}}
         />
-      )}
-    </DashboardShell>
+
+        {isVoiceOpen && (
+          <VoiceOverlay
+            onClose={() => setVoiceOpen(false)}
+            onRecognized={(c, q) => {
+              setVoiceCrop(c);
+              setVoiceQty(q);
+              setVoiceOpen(false);
+            }}
+          />
+        )}
+      </DashboardShell>
+
+      {/* AI Chatbot — fixed popup, farmer page only */}
+      <AIChatbot />
+    </>
   );
 }
