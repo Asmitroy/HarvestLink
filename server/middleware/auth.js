@@ -5,7 +5,7 @@
  */
 import jwt from 'jsonwebtoken';
 
-export const JWT_SECRET = process.env.JWT_SECRET || 'harvestlink-dev-secret-change-in-prod';
+export const JWT_SECRET = process.env.JWT_SECRET || 'kisanconnect-dev-secret-change-in-prod';
 export const JWT_EXPIRY = '24h';
 
 /**

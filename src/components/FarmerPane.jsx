@@ -205,7 +205,7 @@ export default function FarmerPane({ voiceCrop, voiceQty, clearVoice, onVoice, o
         </div>
       </div>
 
-      {/* HarvestLink AI Dynamic Price Card */}
+      {/* KisanConnect AI Dynamic Price Card */}
       <div className={`rounded-2xl border p-3.5 flex items-center justify-between transition-all duration-300 ${
         priceFlash
           ? 'bg-emerald-100 border-[#0D7A51] scale-[1.02] shadow-md ring-2 ring-[#0D7A51]/20'
@@ -214,7 +214,7 @@ export default function FarmerPane({ voiceCrop, voiceQty, clearVoice, onVoice, o
         <div className="flex items-center gap-2.5">
           <span className="text-base font-bold text-[#0D7A51]">✦</span>
           <div>
-            <p className="text-[0.72rem] font-semibold text-[#0D7A51]">HarvestLink AI Recommended Price</p>
+            <p className="text-[0.72rem] font-semibold text-[#0D7A51]">KisanConnect AI Recommended Price</p>
             <p className="text-[1.6rem] font-extrabold text-[#0D7A51] leading-none">
               ₹{aiPrice}<span className="text-[0.75rem] font-semibold text-gray-500">/kg</span>
             </p>

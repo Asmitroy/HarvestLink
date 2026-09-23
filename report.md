@@ -1,4 +1,4 @@
-# HarvestLink - Development Changelog & Work Report
+# KisanConnect - Development Changelog & Work Report
 
 ---
 
@@ -47,7 +47,7 @@ Fixed a Vercel 500 Serverless Execution Error ("A server error has occurred") by
 ## [2026-09-01 14:11 IST] - Vercel Serverless Monorepo Deployment Configuration
 
 ### Objective
-Configure the HarvestLink repository to act as a unified monorepo deploying both the Vite React frontend and Express backend to Vercel, integrating with our Supabase PostgreSQL database.
+Configure the KisanConnect repository to act as a unified monorepo deploying both the Vite React frontend and Express backend to Vercel, integrating with our Supabase PostgreSQL database.
 
 ---
 
@@ -158,7 +158,7 @@ if (err.code) console.error(`[DB Error Code] ${err.code}:`, err.detail || '');
 ## [2026-09-01 00:30 IST] - Authentication & Role-Based Routing
 
 ### Objective
-Pivoted the HarvestLink platform architecture from a 3-pane unified prototype to a production-grade Role-Based Access Control (RBAC) web application. Enforced authentication with JWTs and separated interfaces by user role (`farmer`, `buyer`, `logistics`).
+Pivoted the KisanConnect platform architecture from a 3-pane unified prototype to a production-grade Role-Based Access Control (RBAC) web application. Enforced authentication with JWTs and separated interfaces by user role (`farmer`, `buyer`, `logistics`).
 
 ---
 
@@ -178,7 +178,7 @@ Pivoted the HarvestLink platform architecture from a 3-pane unified prototype to
 ---
 
 ### Task 3 & 4: Frontend Login Screen & React Router Architecture
-- **Branded Login Screen (`src/components/Login.jsx`):** Features HarvestLink emerald design, input sanitization, error display, and 3 Quick Login buttons ("🧑‍🌾 Login as Farmer", "🏢 Login as Buyer", "🚚 Login as Admin") for seamless demo testing.
+- **Branded Login Screen (`src/components/Login.jsx`):** Features KisanConnect emerald design, input sanitization, error display, and 3 Quick Login buttons ("🧑‍🌾 Login as Farmer", "🏢 Login as Buyer", "🚚 Login as Admin") for seamless demo testing.
 - **Client-Side RBAC & Routing (`src/App.jsx` & `src/components/ProtectedRoute.jsx`):**
   - Configured `react-router-dom` with routes:
     - `/login`: Public login interface.
@@ -222,7 +222,7 @@ Pivoted the HarvestLink platform architecture from a 3-pane unified prototype to
 ## [2026-09-01 00:14 IST] - Codebase Optimization & Refactoring
 
 ### Objective
-Optimize the HarvestLink full-stack codebase for high performance, maintainability, low memory footprint, and low latency ahead of introducing the Python AI microservice.
+Optimize the KisanConnect full-stack codebase for high performance, maintainability, low memory footprint, and low latency ahead of introducing the Python AI microservice.
 
 ---
 
@@ -371,7 +371,7 @@ Implement a dynamic AI recommendation pricing engine that calculates real-time c
   - `quantity >= 50kg`: +5% premium.
   - Includes +₹0.5 local supply bump simulation.
 - **Reactive UI Calculation:** As crop or quantity changes (e.g. typing "500"), `aiPrice` updates dynamically (e.g. Tomato changing from ₹22 to ₹28/kg).
-- **Visual Flash Effect:** Triggers a 700ms scale, border highlight, and green glow flash on the "HarvestLink AI Recommended Price" card whenever recommendations update.
+- **Visual Flash Effect:** Triggers a 700ms scale, border highlight, and green glow flash on the "KisanConnect AI Recommended Price" card whenever recommendations update.
 
 ---
 

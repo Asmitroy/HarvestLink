@@ -60,7 +60,7 @@ async function start() {
     app.listen(PORT, () => {
       console.log(`
   ┌─────────────────────────────────────────────┐
-  │  HarvestLink API  →  port ${PORT}              │
+  │  KisanConnect API  →  port ${PORT}           │
   │  DB: Supabase PostgreSQL (pg pool)          │
   │                                             │
   │  PUBLIC                                     │

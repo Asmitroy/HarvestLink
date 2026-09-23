@@ -82,7 +82,7 @@ export default function Login() {
                 </svg>
               </div>
               <div className="text-left">
-                <h1 className="text-2xl font-extrabold text-white tracking-tight leading-none">HarvestLink</h1>
+                <h1 className="text-2xl font-extrabold text-white tracking-tight leading-none">KisanConnect</h1>
                 <p className="text-[0.72rem] text-white/70 font-medium tracking-widest uppercase">Agri Intelligence Platform</p>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function Login() {
           {/* Footer */}
           <div className="px-8 py-4 bg-gray-50 border-t border-gray-100 text-center">
             <p className="text-[0.72rem] text-gray-400">
-              🔒 Secured with JWT · RBAC Authentication · © 2026 HarvestLink
+              🔒 Secured with JWT · RBAC Authentication · © 2026 KisanConnect
             </p>
           </div>
 

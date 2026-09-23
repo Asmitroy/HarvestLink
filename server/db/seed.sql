@@ -1,4 +1,4 @@
--- HarvestLink Seed Data  (mirrors previous mock state)
+-- KisanConnect Seed Data  (mirrors previous mock state)
 -- Run AFTER schema.sql
 
 INSERT INTO users (id, name, role, location, location_lat, location_lng) VALUES

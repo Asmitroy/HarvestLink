@@ -43,7 +43,7 @@ export default function DashboardShell({ children }) {
                 <circle cx="12" cy="11" r="3"/>
               </svg>
             </div>
-            <span className="font-extrabold text-gray-900 text-[1rem] tracking-tight">HarvestLink</span>
+            <span className="font-extrabold text-gray-900 text-[1rem] tracking-tight">KisanConnect</span>
             <span className="hidden sm:inline text-[0.72rem] font-bold px-2.5 py-1 rounded-full border"
               style={{ background: meta.bg, color: meta.color, borderColor: `${meta.color}25` }}>
               {meta.icon} {meta.label}

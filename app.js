@@ -1,7 +1,7 @@
 'use strict';
 
 /* ══════════════════════════════════════════════════════
-   HARVESTLINK — Unified Platform JavaScript
+   KISANCONNECT — Unified Platform JavaScript
 ══════════════════════════════════════════════════════ */
 
 /* ── Toast System ── */

@@ -1,6 +1,6 @@
-# 🌾 HarvestLink
+# 🌾 KisanConnect
 
-**HarvestLink** is a full-stack agricultural marketplace platform that connects **farmers**, **buyers**, and **logistics operators** in a unified real-time supply-chain dashboard. It streamlines produce listing, demand aggregation, and route optimization — all in one place.
+**KisanConnect** is a full-stack agricultural marketplace platform that connects **farmers**, **buyers**, and **logistics operators** in a unified real-time supply-chain dashboard. It streamlines produce listing, demand aggregation, and route optimization — all in one place.
 
 ---
 
@@ -34,7 +34,7 @@
 ## 📁 Project Structure
 
 ```
-HarvestLink/
+KisanConnect/
 ├── api/                   # Vercel serverless entry point
 │   └── index.js
 ├── server/                # Express backend
@@ -96,8 +96,8 @@ HarvestLink/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/HarvestLink.git
-cd HarvestLink
+git clone https://github.com/your-username/KisanConnect.git
+cd KisanConnect
 ```
 
 ### 2. Install dependencies

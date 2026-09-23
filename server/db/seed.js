@@ -21,7 +21,7 @@ const DEMO_USERS = [
   { name: 'Sanjay More',             role: 'farmer',    email: 'sanjay@demo.com', password: 'farmer123', lat: 20.03, lng: 73.65 },
   { name: 'Local Grocers Combined',  role: 'buyer',     email: 'buyer@demo.com',  password: 'buyer123',  lat: 20.00, lng: 73.78 },
   { name: 'FPO Batch Sangamner',     role: 'buyer',     email: 'fpo@demo.com',    password: 'buyer123',  lat: 19.75, lng: 73.99 },
-  { name: 'HarvestLink Admin',       role: 'logistics', email: 'admin@demo.com',  password: 'admin123',  lat: 20.00, lng: 73.78 },
+  { name: 'KisanConnect Admin',      role: 'logistics', email: 'admin@demo.com',  password: 'admin123',  lat: 20.00, lng: 73.78 },
 ];
 
 async function seed() {

@@ -25,7 +25,7 @@ export default function PriceModal({ price, onConfirm, onClose }) {
         </div>
 
         <p className="text-[0.82rem] text-gray-500 leading-relaxed">
-          HarvestLink AI suggests ₹25/kg based on today's Mandi data across 12 nearby markets
+          KisanConnect AI suggests ₹25/kg based on today's Mandi data across 12 nearby markets
         </p>
 
         {/* Price input */}

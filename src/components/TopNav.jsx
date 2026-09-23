@@ -56,7 +56,7 @@ export default function TopNav() {
           </div>
           <span className="text-[1.2rem] font-extrabold tracking-tight"
             style={{ background:'linear-gradient(135deg,#0D7A51,#16a34a)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
-            HarvestLink
+            KisanConnect
           </span>
           <span className="text-[0.62rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border"
             style={{ background:'#E6F4EF', color:'#0D7A51', borderColor:'rgba(13,122,81,0.15)' }}>

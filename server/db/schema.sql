@@ -1,4 +1,4 @@
--- HarvestLink Database Schema
+-- KisanConnect Database Schema
 -- SQLite compatible
 
 PRAGMA foreign_keys = ON;

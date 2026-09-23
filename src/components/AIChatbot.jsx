@@ -9,12 +9,12 @@ const AI_KNOWLEDGE = [
   {
     keywords: ['price', 'pricing', 'rate', 'cost', 'msp', 'minimum support'],
     response: (ctx) =>
-      `📊 **Current AI Price Insights**\n\nBased on live Nashik mandi data:\n• 🍅 Tomato: ₹${ctx.aiPrice ?? 22}/kg (your listing rate)\n• 🧅 Onion: ₹18–22/kg (stable)\n• 🥔 Potato: ₹16–19/kg (slight dip)\n\n💡 **Tip:** Listing 100kg+ gets you a **15% bulk premium** automatically via HarvestLink AI!`,
+      `📊 **Current AI Price Insights**\n\nBased on live Nashik mandi data:\n• 🍅 Tomato: ₹${ctx.aiPrice ?? 22}/kg (your listing rate)\n• 🧅 Onion: ₹18–22/kg (stable)\n• 🥔 Potato: ₹16–19/kg (slight dip)\n\n💡 **Tip:** Listing 100kg+ gets you a **15% bulk premium** automatically via KisanConnect AI!`,
   },
   {
     keywords: ['weather', 'rain', 'monsoon', 'season', 'climate'],
     response: () =>
-      `🌦️ **Nashik District Weather Advisory**\n\nCurrent forecast (24–48h):\n• Light rainfall expected — ideal post-harvest conditions\n• Humidity: 68% → refrigerated storage recommended for tomatoes\n\n⚠️ Avoid open-truck logistics tomorrow. HarvestLink will auto-assign covered vehicles for your listings.`,
+      `🌦️ **Nashik District Weather Advisory**\n\nCurrent forecast (24–48h):\n• Light rainfall expected — ideal post-harvest conditions\n• Humidity: 68% → refrigerated storage recommended for tomatoes\n\n⚠️ Avoid open-truck logistics tomorrow. KisanConnect will auto-assign covered vehicles for your listings.`,
   },
   {
     keywords: ['sell', 'list', 'listing', 'how to list', 'upload'],
@@ -29,7 +29,7 @@ const AI_KNOWLEDGE = [
   {
     keywords: ['transport', 'logistics', 'truck', 'vehicle', 'pickup', 'route', 'delivery'],
     response: () =>
-      `🚚 **Logistics & Routing**\n\nHarvestLink uses a **VRP (Vehicle Routing) optimizer** to:\n• Calculate shortest routes from your farm to Nashik Hub\n• Assign refrigerated vehicles for temperature-sensitive crops\n• Provide real-time GPS tracking\n\nExpected pickup time for listed produce: **2–4 hours**. Our driver will call 30 mins before arrival.`,
+      `🚚 **Logistics & Routing**\n\nKisanConnect uses a **VRP (Vehicle Routing) optimizer** to:\n• Calculate shortest routes from your farm to Nashik Hub\n• Assign refrigerated vehicles for temperature-sensitive crops\n• Provide real-time GPS tracking\n\nExpected pickup time for listed produce: **2–4 hours**. Our driver will call 30 mins before arrival.`,
   },
   {
     keywords: ['tomato', 'onion', 'potato', 'wheat', 'chilli', 'brinjal', 'crop'],
@@ -39,29 +39,29 @@ const AI_KNOWLEDGE = [
   {
     keywords: ['payment', 'upi', 'bank', 'money', 'rupee', 'paid', 'earning'],
     response: () =>
-      `💰 **Payment & Earnings**\n\nHarvestLink guarantees:\n• **Direct UPI transfer** within 24–48 hrs of pickup\n• **Zero commission** on your first 3 listings\n• 2.5% platform fee after that (lowest in the market)\n\nYour earnings are visible in the dashboard chips below the listing form. Need to raise a payment dispute? Say "raise dispute".`,
+      `💰 **Payment & Earnings**\n\nKisanConnect guarantees:\n• **Direct UPI transfer** within 24–48 hrs of pickup\n• **Zero commission** on your first 3 listings\n• 2.5% platform fee after that (lowest in the market)\n\nYour earnings are visible in the dashboard chips below the listing form. Need to raise a payment dispute? Say "raise dispute".`,
   },
   {
     keywords: ['dispute', 'problem', 'issue', 'complaint', 'wrong', 'error'],
     response: () =>
-      `🛠️ **Raise a Support Ticket**\n\nTo resolve an issue:\n1. Describe the problem clearly\n2. Include your lot ID (shown in Active Lots section)\n3. We'll assign a support agent within **2 hours**\n\n📞 Nashik Farmer Helpline: **1800-123-4567** (Free, 24×7)\n📧 farmers@harvestlink.in`,
+      `🛠️ **Raise a Support Ticket**\n\nTo resolve an issue:\n1. Describe the problem clearly\n2. Include your lot ID (shown in Active Lots section)\n3. We'll assign a support agent within **2 hours**\n\n📞 Nashik Farmer Helpline: **1800-123-4567** (Free, 24×7)\n📧 farmers@kisanconnect.in`,
   },
   {
     keywords: ['hello', 'hi', 'namaste', 'hey', 'help', 'start', 'what can you do'],
     response: () =>
-      `🌿 **Namaste! I'm HarvestLink AI Assistant**\n\nI can help you with:\n• 💰 Crop prices & market rates\n• 📦 How to list your produce\n• 🚚 Logistics & pickup info\n• 🌦️ Weather & storage tips\n• 🏢 Matching you with buyers\n• 💳 Payments & earnings\n\nJust type your question in **English, हिंदी, or मराठी**!`,
+      `🌿 **Namaste! I'm KisanConnect AI Assistant**\n\nI can help you with:\n• 💰 Crop prices & market rates\n• 📦 How to list your produce\n• 🚚 Logistics & pickup info\n• 🌦️ Weather & storage tips\n• 🏢 Matching you with buyers\n• 💳 Payments & earnings\n\nJust type your question in **English, हिंदी, or मराठी**!`,
   },
   {
     keywords: ['quality', 'grade', 'a grade', 'fresh', 'organic'],
     response: () =>
-      `⭐ **Grading & Quality Standards**\n\nHarvestLink supports 3 quality tiers:\n• **Grade A** — Fresh, uniform size, no blemishes → Premium price (+20%)\n• **Grade B** — Minor imperfections → Standard rate\n• **Processing Grade** — For juice/paste factories → Bulk pricing\n\nMention your grade when listing. Our AI will match you with appropriate buyers.`,
+      `⭐ **Grading & Quality Standards**\n\nKisanConnect supports 3 quality tiers:\n• **Grade A** — Fresh, uniform size, no blemishes → Premium price (+20%)\n• **Grade B** — Minor imperfections → Standard rate\n• **Processing Grade** — For juice/paste factories → Bulk pricing\n\nMention your grade when listing. Our AI will match you with appropriate buyers.`,
   },
 ];
 
 const FALLBACK_RESPONSES = [
   "🤔 I'm still learning! For that specific query, please contact our **Nashik Farmer Support** at 1800-123-4567.",
   "📋 That's a great question! I'd suggest listing your produce now and our team will follow up within 2 hours.",
-  "🌾 I don't have a specific answer for that yet, but you can always visit the **HarvestLink Help Center** or ask our team directly.",
+  "🌾 I don't have a specific answer for that yet, but you can always visit the **KisanConnect Help Center** or ask our team directly.",
 ];
 
 const QUICK_PROMPTS = [
@@ -157,7 +157,7 @@ export default function AIChatbot() {
     {
       id: 1,
       role: 'bot',
-      text: 'नमस्ते! 🌿 I\'m the **HarvestLink AI Assistant**.\n\nAsk me anything about crop prices, listings, logistics, or buyer demand. I\'m here to help you get the best from your harvest!',
+      text: 'नमस्ते! 🌿 I\'m the **KisanConnect AI Assistant**.\n\nAsk me anything about crop prices, listings, logistics, or buyer demand. I\'m here to help you get the best from your harvest!',
       time: formatTime(new Date()),
     },
   ]);
@@ -283,7 +283,7 @@ export default function AIChatbot() {
                 />
               </div>
               <div>
-                <p className="text-white font-bold text-[0.85rem] leading-tight">HarvestLink AI</p>
+                <p className="text-white font-bold text-[0.85rem] leading-tight">KisanConnect AI</p>
                 <p className="text-green-200 text-[0.68rem]">
                   {isTyping ? '✦ Thinking…' : '● Online · Agri Expert'}
                 </p>
@@ -413,7 +413,7 @@ export default function AIChatbot() {
           border: 'none',
           transition: 'all 0.3s cubic-bezier(0.34,1.56,0.64,1)',
         }}
-        title={isOpen ? 'Close chat' : 'Chat with HarvestLink AI'}
+        title={isOpen ? 'Close chat' : 'Chat with KisanConnect AI'}
       >
         {/* Pulse ring when closed */}
         {!isOpen && (
